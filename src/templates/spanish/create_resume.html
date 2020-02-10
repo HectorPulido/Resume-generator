@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Index - BootResume</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{{url_for('static', filename='create_resume.css')}}" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="py-5 text-center">
+            <h2>¡Crea tu resume!</h2>
+            <p class="lead">Tu resume o curriculum vitae es tu carta de presentacion frente una empresa, tratalo bien.
+                <br>
+                <small class="text-muted">En el panel de la derecha encontraras informacion sobre como mejorar tu
+                    resume.</small>
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 order-md-1">
+                <form class="needs-validation" novalidate>
+                    <h4 class="mb-3">Datos de contacto</h4>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="lead">
+                                <small class="text-muted">Estos datos permitiran que la empresa te contacte, por favor
+                                    revisalos bien antes de enviarlos.</small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="firstName">Nombres</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="firstlastName">Primer apellido</label>
+                            <input type="text" class="form-control" id="firstlastName" placeholder="" value="" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="secondlastName">Segundo apellido</label>
+                            <input type="text" class="form-control" id="secondlastName" placeholder="" value=""
+                                required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="cellphone">Telefono Celular</label>
+                            <input type="text" class="form-control" id="cellphone">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="address">Direccion</label>
+                            <input type="text" class="form-control" id="address">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="country">Pais</label>
+                            <select class="custom-select d-block w-100" id="country" required>
+                                <option value="">Elige...</option>
+                                <option>Colombia</option>
+                                <option>Mexico</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="city">Ciudad</label>
+                            <select class="custom-select d-block w-100" id="city" required>
+                                <option value="">Elige...</option>
+                                <option>Barranquilla</option>
+                                <option>Bogota</option>
+                                <option>Medellin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <h4 class="mb-3">Datos laborales</h4>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="lead">
+                                <small class="text-muted">Cuentale a la empresa sobre tus datos laborales, recuerda ser
+                                    honesto y breve, intenta tambien usar terminos estándar de tu industria.</small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="profesion">¿A que rol aspiras?</label>
+                            <input type="text" class="form-control" id="profesion">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="descripcion">Cuentale a la empresa un poco sobre ti...</label>
+                                <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4">
+                    <h5 class="mb-3">Experiencia</h5>
+
+                    <div id="experience">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-right">
+                            <button class="btn btn-primary" onclick="addExperience()" type="button">
+                                Agregar experiencia</button>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4">
+                    <h5 class="mb-3">Habilidades o Skills</h5>
+
+                    <div id="skills">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-right">
+                            <button class="btn btn-primary" type="button" onclick="addSkills()">
+                                Agregar habilidad
+                            </button>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4">
+                    <h5 class="mb-3">Educacion, estudios y certificado</h5>
+
+                    <div id="studies">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-right">
+                            <button class="btn btn-primary" type="button" onclick="addEducation()">Añadir education o
+                                certificado</button>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Generar el resume</button>
+                </form>
+            </div>
+
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Consejos y tips</span>
+                </h4>
+
+                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">¡No mientas!</h5>
+                        <p class="card-text">Mentir es faltar el respeto a los reclutadores. Tu falta de experiencia
+                            saldra a la luz rapidamente durante la entrevista evitando que obtengas el puesto y
+                            probablemente
+                            que pierdas tu credibilidad ante otras empresas.
+                        </p>
+                    </div>
+                </div>
+                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">¡Se breve!</h5>
+                        <p class="card-text">Una pagina es mas que suficiente, los reclutadores solo tienen tiempo para
+                            leer una pagina, destacate del resto por calidad, no cantidad.
+                        </p>
+                    </div>
+                </div>
+                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">¡Solo temas relacionado!</h5>
+                        <p class="card-text">Solamente agrega aqui la experiencia y los estudios relacionados al cargo
+                            que quieres obtener.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+
+        </footer>
+    </div>
+</body>
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.27/bootstrap-native-v4.min.js"></script>
+
+<script type="text/javascript" src="{{url_for('static', filename='create_resume.js')}}"></script>
+
+</html>
