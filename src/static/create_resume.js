@@ -51,15 +51,15 @@ function addEducation() {
     <div class="row">
         <div class="col-md-4 mb-3">
             <label for="company[__id__]">¿Nombre de la empresa?</label>
-            <input type="text" class="form-control" id="company[]">
+            <input type="text" class="form-control" id="company[__id__]">
         </div>
         <div class="col-md-4 mb-3">
             <label for="rol[__id__]">¿Tu rol en la empresa?</label>
-            <input type="text" class="form-control" id="rol[]">
+            <input type="text" class="form-control" id="rol[__id__]">
         </div>
         <div class="col-md-4 mb-3">
             <label for="time[__id__]">¿Cuanto tiempo trabajaste ahi?</label>
-            <input type="text" class="form-control" id="time[]">
+            <input type="text" class="form-control" id="time[__id__]">
         </div>
     </div>
     <div class="row">
@@ -80,7 +80,7 @@ function addEducation() {
     addFieldToSection(html, "studies");
 }
 
-function removeParent(self){
+function removeParent(self) {
     self.parentElement.parentElement.remove();
 }
 
@@ -91,8 +91,37 @@ function addFieldToSection(html, id) {
     section.appendChild(field);
 }
 
+function setInputs() {
+    document.querySelectorAll("input, select, textarea").forEach((self) => {
+        self.name = self.id;
+    });
+}
+
+function showResumeModal() {
+    setInputs();
+    download.value = 0;
+    sendForm.target = "resumeModalData";
+    sendForm.submit();
+    resumeModal.show();
+}
+
+function downloadResume() {
+    setInputs();
+    download.value = 1;
+    sendForm.target = "_blank";
+    sendForm.submit()
+}
+
+let sendForm;
+let resumeModal
+let download;
 document.addEventListener("DOMContentLoaded", function () {
     addExperience();
     addSkills();
     addEducation();
+
+    download = document.getElementById("download");
+    sendForm = document.getElementById("sendForm");
+
+    resumeModal = new Modal(document.getElementById("resumeModal"), {});
 });

@@ -1,3 +1,4 @@
 requests
 firebase-admin
 flask
+flask_weasyprint 

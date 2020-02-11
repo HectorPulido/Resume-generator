@@ -7,20 +7,26 @@
     user-select: none;
 }
 
-@media (min-width: 768px) {
+.padding-1em {
+    padding: 1em;
+}
+
+.br {
+    display: block;
+    margin-bottom: 2em;
+}
+
+iframe {
+    border-width: 0;
+    height: 70vh;
+}
+
+@media (max-width: 768px) {
+    .br {
+        display: block;
+        margin-bottom: 1em;
+    }
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
     }
-}
-.br { 
-    display: block; 
-    margin-bottom: 2em; 
-} 
-
-@media (max-width: 768px) {
-
-    .br { 
-        display: block; 
-        margin-bottom: 1em; 
-    }     
 }

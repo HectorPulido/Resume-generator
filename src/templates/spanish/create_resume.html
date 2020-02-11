@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Index - BootResume</title>
     <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <link href="{{url_for('static', filename='create_resume.css')}}" rel="stylesheet">
@@ -26,7 +25,8 @@
 
         <div class="row">
             <div class="col-md-8 order-md-1">
-                <form class="needs-validation" novalidate>
+                <form id="sendForm" action="/showResume" method="post" target="resumeModalData">
+                    <input type="hidden" value="1" id="download">
                     <h4 class="mb-3">Datos de contacto</h4>
                     <div class="row">
                         <div class="col-md-12">
@@ -47,8 +47,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="secondlastName">Segundo apellido</label>
-                            <input type="text" class="form-control" id="secondlastName" placeholder="" value=""
-                                required>
+                            <input type="text" class="form-control" id="secondlastName" placeholder="" value="" required>
                         </div>
                     </div>
                     <div class="row">
@@ -148,7 +147,7 @@
                     </div>
 
                     <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Generar el resume</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="button" onclick="showResumeModal()">Generar el resume</button>
                 </form>
             </div>
 
@@ -160,39 +159,46 @@
                 <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">¡No mientas!</h5>
-                        <p class="card-text">Mentir es faltar el respeto a los reclutadores. Tu falta de experiencia
-                            saldra a la luz rapidamente durante la entrevista evitando que obtengas el puesto y
-                            probablemente
-                            que pierdas tu credibilidad ante otras empresas.
+                        <p class="card-text">Mentir es faltar el respeto a los reclutadores. Tu falta de experiencia saldra a la luz rapidamente durante la entrevista evitando que obtengas el puesto y probablemente que pierdas tu credibilidad ante otras empresas.
                         </p>
                     </div>
                 </div>
                 <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">¡Se breve!</h5>
-                        <p class="card-text">Una pagina es mas que suficiente, los reclutadores solo tienen tiempo para
-                            leer una pagina, destacate del resto por calidad, no cantidad.
+                        <p class="card-text">Una pagina es mas que suficiente, los reclutadores solo tienen tiempo para leer una pagina, destacate del resto por calidad, no cantidad.
                         </p>
                     </div>
                 </div>
                 <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">¡Solo temas relacionado!</h5>
-                        <p class="card-text">Solamente agrega aqui la experiencia y los estudios relacionados al cargo
-                            que quieres obtener.
+                        <p class="card-text">Solamente agrega aqui la experiencia y los estudios relacionados al cargo que quieres obtener.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <footer class="my-5 pt-5 text-muted text-center text-small">
+        <!-- Large modal -->
 
+        <div id="resumeModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content padding-1em">
+                    <iframe class="mb-2" id="resumeModalData" name="resumeModalData">Por favor espere...</iframe>
+                    <div class="col-md-12 text-right">
+                        <button class="btn btn-primary" type="button" onclick="downloadResume()">Descargar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
         </footer>
     </div>
 </body>
-<script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.27/bootstrap-native-v4.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.27/bootstrap-native-v4.min.js"></script>
 
 <script type="text/javascript" src="{{url_for('static', filename='create_resume.js')}}"></script>
 
