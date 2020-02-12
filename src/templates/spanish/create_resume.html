@@ -10,6 +10,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{url_for('static', filename='create_resume.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='loading.css')}}" rel="stylesheet">
 </head>
 
 <body class="bg-light">
@@ -147,7 +148,8 @@
                     </div>
 
                     <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="button" onclick="showResumeModal()">Generar el resume</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="button" onclick="showResumeModal()">Generar
+                        el resume</button>
                 </form>
             </div>
 
@@ -197,9 +199,22 @@
         <footer class="my-5 pt-5 text-muted text-center text-small">
         </footer>
     </div>
+    <div id="loading-container" hidden>
+        <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.27/bootstrap-native-v4.min.js"></script>
-
+<script type="text/javascript" src="{{url_for('static', filename='loading.js')}}"></script>
 <script type="text/javascript" src="{{url_for('static', filename='create_resume.js')}}"></script>
 
 </html>

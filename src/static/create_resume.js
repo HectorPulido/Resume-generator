@@ -1,4 +1,5 @@
 let idExperience = 0;
+
 function addExperience() {
     idExperience++;
     let html = `
@@ -26,6 +27,7 @@ function addExperience() {
 }
 
 let idSkill = 0;
+
 function addSkills() {
     idSkill++;
     let html = `
@@ -45,6 +47,7 @@ function addSkills() {
 }
 
 let idEducation = 0;
+
 function addEducation() {
     idEducation++;
     let html = `
@@ -98,10 +101,13 @@ function setInputs() {
 }
 
 function showResumeModal() {
+    setLoading();
     setInputs();
     download.value = 0;
     sendForm.target = "resumeModalData";
     sendForm.submit();
+
+    resumeModalIframe.onload = function() { unsetLoading(); };
     resumeModal.show();
 }
 
@@ -115,12 +121,14 @@ function downloadResume() {
 let sendForm;
 let resumeModal
 let download;
-document.addEventListener("DOMContentLoaded", function () {
+let resumeModalIframe;
+document.addEventListener("DOMContentLoaded", function() {
     addExperience();
     addSkills();
     addEducation();
 
     download = document.getElementById("download");
+    resumeModalIframe = document.getElementById("resumeModalData");
     sendForm = document.getElementById("sendForm");
 
     resumeModal = new Modal(document.getElementById("resumeModal"), {});
