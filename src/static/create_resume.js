@@ -67,12 +67,12 @@ function addEducation() {
             <input type="text" class="form-control" id="education[__id__][title]">
         </div>
         <div class="col-md-4 mb-3">
-            <label for="education[__id__][rol]">¿Institucion?</label>
-            <input type="text" class="form-control" id="education[__id__][rol]">
+            <label for="education[__id__][institution]">¿Institucion?</label>
+            <input type="text" class="form-control" id="education[__id__][institution]">
         </div>
         <div class="col-md-2 mb-3">
-            <label for="education[__id__][year-of-study]">¿Año?</label>
-            <input type="text" class="form-control" id="education[__id__][year-of-study]">
+            <label for="education[__id__][year_of_study]">¿Año?</label>
+            <input type="text" class="form-control" id="education[__id__][year_of_study]">
         </div>
         <div class="col-md-2 text-right mb-4">
             <span class="br"></span> 

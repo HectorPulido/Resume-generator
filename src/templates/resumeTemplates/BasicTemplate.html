@@ -3,187 +3,76 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hector Pulido Resume</title>
-
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
-        integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="resume.css"> -->
-
 </head>
 
 <body>
-    <section class="container">
-        <section class="row">
-            <section class="col-sm-8" id="name">
+    <div class="container">
+        <div class="header">
+            <!-- Datos personales -->
+            <div id="dataPersonal">
                 <h1>{{firstName + " " + firstlastName + " " + secondlastName}}</h1>
-                <p><b>{{profesion}}</b> </p>
-                <br>
-            </section>
-        </section>
-    </section>
-
-
-    <section class="container">
-        <section class="row">
-            <section class="col-sm-8">
-                <section id="Highlights">
-                    {% for expense in expenses %}
-                    <h2><i class="fas fa-keyboard"></i> Experiencia laboral</h2>
-                    <h3>- Ingeniero de software en Finsocial<br> <small>Febrero 2019 - Actualidad</small></small>
-                    </h3>
-                    <br>
-                    {% endfor %}
-                </section>
-                <section id="Highlights">
-                    <h2><i class="fas fa-star"></i> Proyectos open source destacados</h2>
-                    <br>
-                    <div>
-                        <h3><a href="https://github.com/HectorPulido/Evolutionary-Neural-Networks-on-unity-for-bots"><i
-                                    class="fas fa-robot"></i> Evolutionary Neural Networks on unity</a></h3>
-                        <p>Este es un proyecto de <b>machine learning / aprendizaje reforzado</b> hecho en Unity3d y C#,
-                            utiliza <b>redes neuronales y algoritmos genéticos</b> para crear inteligencias artificiales
-                            autónomas en videojuegos. </p>
-                    </div>
-                    <div>
-                        <h3><a href="https://github.com/HectorPulido/Imitation-learning-in-unity"><i
-                                    class="fas fa-robot"></i> Imitiation Learning in unity</a> </h3>
-                        <p>Algoritmo de machine learning que guarda toda las acciones de un usuario dentro de un entorno
-                            dado para luego entrenar una <b>red neuronal</b> con esos datos. Proyecto hecho en Unity3D y
-                            C#.
-                        </p>
-                    </div>
-                    <div>
-                        <h3><a href="https://github.com/HectorPulido/Decentralized-Twitter-with-blockchain-as-base"><i
-                                    class="fas fa-key"></i> Decentralized Twitter like app </a> </h3>
-                        <p>Aplicación parecida a Twitter usando tecnologías <b>Descentralizadas</b> en este caso un
-                            <b>Blockchain</b>. Este proyecto esta en Python, Html, Css y Javascript. </p>
-                    </div>
-                    <div>
-                        <h3><a href="https://github.com/HectorPulido/Chatbot-seq2seq-C"><i class="fas fa-robot"></i>
-                                Chatbot seq2seq made with C#</a> </h3>
-                        <p>Chatbot genérico hecho con algoritmos basados en <b>Machine learning; Seq2Seq</b> hecho
-                            puramente utilizando C#.</p>
-                    </div>
-                    <div>
-                        <h3><a href="https://github.com/HectorPulido/Pong-Policy-gradients"><i class="fas fa-robot"></i>
-                                Policy gradients en C#</a> </h3>
-                        <p>Algoritmo de <b>Machine learning / aprendizaje reforzado</b> con en el cual un bot aprender a
-                            jugar un juego por su cuenta.</p>
-                    </div>
-                    <div>
-                        <h3><a href="https://github.com/HectorPulido/Simple-php-blog"><i class="fas fa-keyboard"></i>
-                                Complete blog manager made with PHP</a> </h3>
-                        <p>Gestor de blogs hecho con <b>PHP</b>, con sistemas de comentarios, login, etc.</p>
-                    </div>
-                    <br>
-                </section>
-                <hr>
-                <section id="Habilidades">
-                    <h2><i class="fas fa-fire"></i> Habilidades</h2>
-                    <br>
-                    <h3>- Me gusta aprender sobre temas complejos.</h3>
-                    <h3>- Puedo aprender muy rápido nuevas tecnologías y técnicas.</h3>
-                    <h3>- Puedo hablar en publico y transmitir ideas con facilidad.</h3>
-                </section>
-                <br>
-                <hr>
-                <section id="education">
-                    <h2><i class="fas fa-graduation-cap"></i> Educación</h2>
-                    <h3>- Ingeniería mecatrónica, Universidad Autónoma Del Caribe, Barranquilla Colombia <br>
-                        <small>Junio 2005 - Septiembre 2019</small></small>
-                    </h3>
-                    <br>
-                </section>
-                <hr>
-                <br>
-                <br><br>
-            </section>
-            <section class="col-sm-4">
-                <section id="contact">
-                    <h2><i class="fas fa-book"></i> Contacto</h2>
-                    <br>
-                    <h4><a href=""><i class="fas fa-id-card-alt"></i> CC. 1124064874</a> </h4>
-                    <h4><a href=""><i class="fas fa-phone"></i> +573008368595</a> </h4>
-                    <h4><a href="mailto:hectorandrespp@gmail.com"><i class="fas fa-envelope"></i>
-                            hectorandrespp@gmail.com</a></h4>
-                    <h4><a href="https://github.com/HectorPulido"><i class="fab fa-github"></i> Github</a></h4>
-                    <h4><a href="https://www.youtube.com/channel/UCS_iMeH0P0nsIDPvBaJckOw"><i
-                                class="fab fa-youtube"></i> Youtube</a></h4>
-                    <h4><a href="https://twitter.com/Hector_Pulido_"><i class="fab fa-twitter"></i> Twitter</a></h4>
-                    <br>
-                </section>
-                <hr>
-                <section id="skills">
-                    <h2><i class="fas fa-magic"></i> Tecnologias</h2>
-                    <br>
-                    <h4>Python</h4>
-                    <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="100"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div><br>
-                    <h4>C# y Tecnologías .Net</h4>
-                    <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 85%" aria-valuenow="100"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div><br>
-                    <h4>Javascript y NodeJs</h4>
-                    <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="100"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div><br>
-                    <h4>PHP</h4>
-                    <div class="progress">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="100"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <br>
-                    <h4>Unity3D</h4>
-                    <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 99%" aria-valuenow="100"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <br>
-                    <h4>Arduino (Y hardware)</h4>
-                    <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="100"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <br>
-                    <h4>ASM para Pics</h4>
-                    <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="100"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <br>
-                </section>
-                <hr>
-                <section id="Languages"></section>
-                <h2><i class="fas fa-globe-europe"></i> Lenguajes</h2>
-                <br>
-                <h4>Español</h4>
-                <div class="progress">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 99%" aria-valuenow="100"
-                        aria-valuemin="0" aria-valuemax="100"></div>
+                <h3>{{profesion}}</h3>
+                <p>{{descripcion}}</p>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="c1">
+                <div id="dataExperience">
+                    <h3>Experiencia laboral</h3>
+                    {%for i, e in experience.items()%}
+                    <h4>{{e.rol}}</h4>
+                    <h5>{{e.company}}</h5>
+                    <p class="small">{{e.time}}</p>
+                    <p>{{e.descripcion_experience}}</p>
+                    {%endfor%}
                 </div>
-                <br>
-                <h4>Ingles</h4>
-                <div class="progress">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="100"
-                        aria-valuemin="0" aria-valuemax="100"></div>
+
+                <div id="dataEducation">
+                    <h3>Educacion y certificaciones</h3>
+                    {%for i, e in education.items()%}
+                    <h4>{{e.title}}</h4>
+                    <h5>{{e.rol}}</h5>
+                    <p>{{e.institution}}</p>
+                    <p class="small">{{e.year_of_study}}</p>
+                    {%endfor%}
                 </div>
-                <br>
-                <br>
-                <hr>
-            </section>
+            </div>
+            <div class="c2">
+                <div id="dataContact">
+                    <h3>Datos de contacto</h3>
+                    <ul>
+                        <li>Email: {{email}}</li>
+                        <li>Telefono: {{cellphone}}</li>
+                        <li>Ciudad: {{city}} {{country}}</li>
+                    </ul>
+                </div>
 
-        </section>
+                <div id="dataSkill">
+                    <h3>Habilidades</h3>
+                    {%for i, s in skill.items()%}
+                    <h4>{{s}}</h4>
+                    {%endfor%}
+                </div>
+            </div>
 
-    </section>
+        </div>
+
+    </div>
 </body>
+
+<style>
+    .header{
+        padding: 2em;
+    }
+    .columns {
+        column-count: 2;
+        columns: 2 12em
+    }
+</style>
 
 </html>
